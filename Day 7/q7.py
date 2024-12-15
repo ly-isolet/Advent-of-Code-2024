@@ -3,7 +3,7 @@
 
 # 1. Split input into answer (left side) and numbers (right side)
 # 2. search thru numbers to see if numbers can add or multiply (or both) to be the answer.
-#   2b. brute force?
+#   2b. Recursively check each number with each math operation
 
 # Takes (file)name as input and returns the two sides of the equation as lists
 def parseInput(name):
@@ -19,7 +19,7 @@ def parseInput(name):
     
     return answers, numbers
 
-# Recursion
+# Recursively loop through the list and check each math operation to see if we can get to the leftside (answer)
 def search(cur, rightside, leftside):
     if len(rightside) == 0:
         return cur == leftside
@@ -27,11 +27,9 @@ def search(cur, rightside, leftside):
         return False
     temp = rightside[1:]
     ## p1
-    return search(cur + rightside[0], temp, leftside) or search(cur * rightside[0], temp, leftside)
+    # return search(cur + rightside[0], temp, leftside) or search(cur * rightside[0], temp, leftside)
     ## p2
-    # return search(cur + l[0], temp, target) or search(cur * l[0], temp, target) or search(int(str(cur) + str(l[0])), temp, target)
-
-
+    return search(cur + rightside[0], temp, leftside) or search(cur * rightside[0], temp, leftside) or search(int(str(cur) + str(rightside[0])), temp, leftside)
 
 # Driver section!
 total = 0
@@ -39,6 +37,7 @@ answers, numbers = parseInput('Day 7/q7.txt')
 for i in range(len(answers)):
     answer = int(answers[i])
     number = numbers[i]
-    if search(0, list(map(int, number.split(' '))), answer):
+    # IMPORTANT: we are starting at 1 because if we start 0 we will multiply the first number by 0 and lose it. For addition 0 or 1 is fine.
+    if search(1, list(map(int, number.split(' '))), answer):
         total += answer
 print(total)
