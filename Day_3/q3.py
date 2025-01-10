@@ -1,7 +1,7 @@
 #  Day 3 of Advent of Code 2024, https://adventofcode.com/2024/day/3
 import re
 
-file = open('Day 3/q3.txt').read().splitlines()
+file = open('input/q3.txt').read().splitlines()
 
 ans1 = 0
 ans2 = 0

@@ -27,7 +27,7 @@ def isSafe2(line):
     return isSafe(line) or isSafeRemoved(line)
 
 ## Driver function ##
-with open("Day 2/q2.txt", 'r') as file:
+with open("input/q2.txt", 'r') as file:
     lines = file.readlines()
 
 ans1 = 0

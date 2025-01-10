@@ -33,7 +33,7 @@ def search(cur, rightside, leftside):
 
 # Driver section!
 total = 0
-answers, numbers = parseInput('Day 7/q7.txt')
+answers, numbers = parseInput('input/q7.txt')
 for i in range(len(answers)):
     answer = int(answers[i])
     number = numbers[i]

@@ -29,7 +29,8 @@ def parseFile(fname):
 
 # Checks if the next row or columns is out of bounds
 def isOutOfBounds(row, col):
-    return row < 0 or row > len(wordSearch) or col < 0 or col > len(wordSearch[0])
+    # return row < 0 or row > len(wordSearch) or col < 0 or col > len(wordSearch[0])
+    return row < 0 or row >= len(wordSearch) or col < 0 or col >= len(wordSearch[0])
 
 # checks if xmas can be created if given direction, row, and column
 def check(row, col, dir):
@@ -42,7 +43,8 @@ def check(row, col, dir):
     return True
 
 ### Driver section
-wordSearch = (parseFile("Day 4/test.txt"))   # Test should find 18 XMAS
+# wordSearch = (parseFile("input/q4.txt"))   # P1 Test should find 18 XMAS
+wordSearch = (parseFile("input/d4P2Test.txt"))
 rows = len(wordSearch)
 cols = len(wordSearch[0])
 

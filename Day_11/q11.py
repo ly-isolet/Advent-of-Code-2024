@@ -19,7 +19,7 @@ def transStones(lst):
     return newEngravings
 
 ## Textfile and Driver function ##
-file = open("Day 11/q11.txt").read().split(' ')
+file = open("input/q11.txt").read().split(' ')
 input = []
 for line in file:
     input.append(int(line))

@@ -126,7 +126,7 @@ def runProgram(a, b, c, p, o):
 
 ## Driver function
 temp = []
-rA, rB, rC, prog = parseFile('Day 17/test.txt')
+rA, rB, rC, prog = parseFile('input/d17Test.txt')
 ans1 = runProgram(rA, rB, rC, prog, temp)
 
 print(ans1)

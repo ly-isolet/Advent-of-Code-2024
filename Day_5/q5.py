@@ -56,7 +56,7 @@ def swap(pages):
 ## Driver code
 ans1 = 0
 ans2 = 0
-rules, pages = parseFile('Day 5/q5.txt')
+rules, pages = parseFile('input/q5.txt')
 for p in pages:
     if not isValid(p):  # if not valid use swap method to make it valid
         swap(p)

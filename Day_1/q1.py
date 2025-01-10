@@ -4,7 +4,7 @@ from collections import defaultdict
 a1 = []
 a2 = []
 
-with open("Day 1/q1.txt", "r") as file:
+with open("input/q1.txt", "r") as file:
     lines = file.readlines()
     a2Freq = defaultdict(int)
 
